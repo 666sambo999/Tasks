@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Prospo/Prospo.vcxproj" Id="243c1b66-66f8-45c6-b499-8c9db759ffe6" />
+</Solution>
