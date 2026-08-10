@@ -1,10 +1,17 @@
 #include <iostream>
 
+using std::cin;
+using std::cout;
+using std::endl;
+
 using namespace std;
 //#define DEBUG; 
 //#define NUMBER;
 //#define OPER;
 //#define Math
+//#define Registr
+
+
 
 void main()
 {
@@ -145,7 +152,29 @@ menu:
 	system("pause");
 #endif // Maht
 
+#ifdef Registr
+// в верхний регистр 
+	char charter('a');
+	cout << "Введите букву: " << endl; 
+	cin >> charter; 
+	//charter = charter - 32;
+	cout << endl;
+	//cout << "Та же буква только в верхнем регистре: " << charter << endl; 
+	cout << "Та же буква только в верхнем регистре: " << (char)toupper(charter) << endl; 
+#endif // DEBUG
+
 	
+	
+	// перевод из метрах км;
+	
+	double a;
+	cout << "Введите количество в метрах: " << endl;
+	cin >> a;
+	cout << endl; 
+	cout << a << " метров будет -" << a / 1000 <<"километр(ов) " << endl;
+
+
+
 
 }
 
