@@ -1,4 +1,6 @@
-п»ї#include <iostream>
+#include <iostream>
+#include <Windows.h>
+
 
 using std::cin;
 using std::cout;
@@ -12,8 +14,9 @@ using namespace std;
 //#define Registr
 //#define Km 
 //#define Int_v_char
-#define House
-
+//#define House
+//#define Triengle
+#define Labor
 
 void main()
 {
@@ -25,24 +28,24 @@ void main()
 			int tries = 1;
 			while (tries < 4)
 			{
-				cout << "Р‘СѓРґРµС‚Рµ РїСЂРѕРґРѕР»Р¶Р°С‚СЊ - y and n?\n";
+				cout << "Будете продолжать - y and n?\n";
 				char anwar = 0;
 				cin >> anwar;
 				switch (anwar)
 				{
 					case 'y': return true;
 					case 'n': return false;
-					default: cout << "РР·РІРёРЅРёС‚Рµ, РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·\n";
+					default: cout << "Извините, попробуйте еще раз\n";
 					tries = tries + 1;
 				}
 			}
-			cout << "РћС‚РІРµС‚ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№";
+			cout << "Ответ отрицательный";
 			return false;
 		}
-		// РєР°РЅРєР°С‚РµРЅР°С†РёСЏ СЃС‚СЂРѕРє (РѕР±СЉРµРґРёРЅРµРЅРёРµ)
+		// канкатенация строк (объединение)
 
-	string s1 = "РџСЂРёРІРµС‚";
-	string s2 = " Рё РїРѕРєР° Р»РѕС…";
+	string s1 = "Привет";
+	string s2 = " и пока лох";
 
 	//string s3 = s1 +"," + s2;
 	s1 = s1 + '\n';
@@ -50,18 +53,18 @@ void main()
 	cout << s1 + s2;
 
 	string name = "Neils Stroustrup";
-	string s = name.substr(6, 10);//РІРѕР·РІСЂР°С‰Р°РµС‚ СЃС‚СЂРѕРєСѓ  
-	name.replace(0, 5, "Nicholas");// Р·Р°РјРµС‰Р°РµС‚ СЃР»РѕРІРѕ
+	string s = name.substr(6, 10);//возвращает строку  
+	name.replace(0, 5, "Nicholas");// замещает слово
 	cout << name;
 #endif // DEBUG
 
 #ifdef NUMBER
 	int number;
-	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: \n"; cin >> number;
+	cout << "Введите число: \n"; cin >> number;
 	if ((number % 2) == 0) { cout << "Even"; }
 	else cout << "Odd\n";
 
-	const int n = 100;// С„РёР±РѕРЅР°С‡С‡Рё
+	const int n = 100;// фибоначчи
 	int a, b, c;
 	b = 0; c = 1;
 	for (int i = 2; i < n; i++)
@@ -73,16 +76,16 @@ void main()
 	}
 #endif // 
 #ifdef OPER
-	// Р±РёС‚РѕРІС‹Рµ РѕРїРµСЂР°С†РёРё
-	char bb = 0x64;//=100 РёР»Рё || 1100100 РІ РґРµСЃСЏС‚РёС‡РЅРѕР№ СЃРёСЃС‚РµРјРµ 
-	if (bb & 4) cout << "РўСЂРµС‚РёР№ Р±РёС‚ СЂР°РІРµРЅ 1\n";
-	else cout << "РўСЂРµС‚РёР№ Р±РёС‚ СЂР°РІРµРЅ 0\n";
-	if (bb & 8) cout << "Р§РµС‚РІРµСЂС‚С‹Р№ Р±РёС‚ СЂР°РІРµРЅ 1\n";
-	else cout << "Р§РµС‚РІРµСЂС‚С‹Р№ Р±РёС‚ СЂР°РІРµРЅ 0 \n";
-	if (bb & 32) cout << "РЁРµСЃС‚РѕР№ Р±РёС‚ СЂР°РІРµРЅ 1\n";
-	else cout << "РЁРµСЃС‚РѕР№ Р±РёС‚ СЂР°РІРµРЅ 0 \n";
-	if (bb & 2) cout << "Р±РёС‚ СЂР°РІРµРЅ 1\n";
-	else cout << "Р±РёС‚ СЂР°РІРµРЅ 0 \n";
+	// битовые операции
+	char bb = 0x64;//=100 или || 1100100 в десятичной системе 
+	if (bb & 4) cout << "Третий бит равен 1\n";
+	else cout << "Третий бит равен 0\n";
+	if (bb & 8) cout << "Четвертый бит равен 1\n";
+	else cout << "Четвертый бит равен 0 \n";
+	if (bb & 32) cout << "Шестой бит равен 1\n";
+	else cout << "Шестой бит равен 0 \n";
+	if (bb & 2) cout << "бит равен 1\n";
+	else cout << "бит равен 0 \n";
 
 	int s;
 	cin >> s;
@@ -90,12 +93,12 @@ void main()
 	bool bbs = (s < 0) || (s > 100); // 
 	bool bbbs = !((s >= 0) && (s <= 100));
 #endif // DEBUG
-
+	
 #ifdef Math
-	 РѕР±С‰Р°СЏ С„РѕСЂРјР° СЃРґРІРёРіР° >> << 
-	 РїРµСЂРµРјРµРЅРЅР°СЏ >> РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·СЂСЏРґРѕРІ РІРїСЂР°РІРѕ
-	 РїРµСЂРµРјРµРЅРЅР°СЏ << РєРѕР»РёС‡РµСЃС‚РІРѕ СЂР°Р·СЂСЏРґРѕРІ  РІР»РµРІРѕ
-	РїСЂРёРјРµСЂ 
+	 общая форма сдвига >> << 
+	 переменная >> количество разрядов вправо
+	 переменная << количество разрядов  влево
+	пример 
 	int a, b;
 	a = 3; b = 2048;
 	int n = a << 5;// n = a*32;
@@ -106,75 +109,74 @@ void main()
 	cout << x;
 
 	int a;
-	cout << "РІРІРµРґРёС‚Рµ РїСЏС‚РёР·РЅР°С‡РЅРѕРµ С‡РёСЃР»Рѕ: " << endl;
+	cout << "введите пятизначное число: " << endl;
 	cin >> a;
 	cout << endl;
 
 		if (a >= 0 && a <= 9999)
 		{
-			for (int i =0; i<5; i++){cout << "РІС‹ РІРІРµР»Рё РЅРµ РІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ ...";}
+			for (int i =0; i<5; i++){cout << "вы ввели не верное значение, повторите попытку ...";}
 
 		}
-		else if (a >= 100000) { cout << "РІС‹ РІРІРµР»Рё РЅРµ РІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ ..."; }
+		else if (a >= 100000) { cout << "вы ввели не верное значение, повторите попытку ..."; }
 		else
 			{
-				cout << " 1 С†РёС„СЂР° СЂР°РІРЅР° = " << (a / 10000) << endl;
-				cout << " 2 С†РёС„СЂР° СЂР°РІРЅР° = " << (a / 1000) % 10 << endl;
-				cout << " 3 С‡РёСЃР»Рѕ СЂР°РІРЅРѕ = " << (a / 100) % 10 << endl;
-				cout << " 4 С‡РёСЃР»Рѕ СЂР°РІРЅРѕ = " << (a / 10) % 10 << endl;
-				cout << " 5 С‡РёСЃР»Рѕ СЂР°РІРЅРѕ = " << a % 10 << endl;
+				cout << " 1 цифра равна = " << (a / 10000) << endl;
+				cout << " 2 цифра равна = " << (a / 1000) % 10 << endl;
+				cout << " 3 число равно = " << (a / 100) % 10 << endl;
+				cout << " 4 число равно = " << (a / 10) % 10 << endl;
+				cout << " 5 число равно = " << a % 10 << endl;
 			}
 		cout << endl;
 	
 	int number;
 start:
-	cout << "Р’РІРµРґРёС‚Рµ РїСЏС‚РёР·РЅР°С‡РЅРѕРµ С‡РёСЃР»Рѕ: " << endl;
+	cout << "Введите пятизначное число: " << endl;
 	cin >> number;
 	cout << endl;
 	if ((number > 9999) && (number <= 99999))
 	{
 		for (int i = 0; i < 5; i++) {
-			cout << i + 1 << "-Рµ С‡РёСЃР»Рѕ СЂР°РІРµРЅ " << (number / static_cast<int>(pow(10, (4 - i)))) % 10 << endl;
+			cout << i + 1 << "-е число равен " << (number / static_cast<int>(pow(10, (4 - i)))) % 10 << endl;
 		}
 		cout << endl;
 	}
 	else {
-		cout << "РІС‹ РІРІРµР»Рё РЅРµРІРµСЂРЅРѕРµ С‡РёСЃР»Рѕ, РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ ... " << endl;
+		cout << "вы ввели неверное число, повторите попытку ... " << endl;
 		goto start;
 	}
 	int menu_num;
 menu:
-	cout << " \n1 - РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ? \n2 - Р’С‹С…РѕРґ\n\n РЎРґРµР»Р°Р№С‚Рµ РІС‹Р±РѕСЂ (1 РёР»Рё 2) : " << endl;
+	cout << " \n1 - продолжить работу? \n2 - Выход\n\n Сделайте выбор (1 или 2) : " << endl;
 	cin >> menu_num;
 	switch (menu_num) {
 	case 1: { goto start; break; }
 	case 2: { return;  break; }
-	default: { cout << "Р±СѓРґСЊС‚Рµ РІРЅРёРјР°С‚РµР»СЊРЅС‹ @ " << endl; }
+	default: { cout << "будьте внимательны @ " << endl; }
 	}
 	system("pause");
 #endif // Maht
 
 #ifdef Registr
-	// РІ РІРµСЂС…РЅРёР№ СЂРµРіРёСЃС‚СЂ 
+	// в верхний регистр 
 	char charter('a');
-	cout << "Р’РІРµРґРёС‚Рµ Р±СѓРєРІСѓ: " << endl;
+	cout << "Введите букву: " << endl;
 	cin >> charter;
 	//charter = charter - 32;
 	cout << endl;
-	//cout << "РўР° Р¶Рµ Р±СѓРєРІР° С‚РѕР»СЊРєРѕ РІ РІРµСЂС…РЅРµРј СЂРµРіРёСЃС‚СЂРµ: " << charter << endl; 
-	cout << "РўР° Р¶Рµ Р±СѓРєРІР° С‚РѕР»СЊРєРѕ РІ РІРµСЂС…РЅРµРј СЂРµРіРёСЃС‚СЂРµ: " << (char)toupper(charter) << endl;
+	//cout << "Та же буква только в верхнем регистре: " << charter << endl; 
+	cout << "Та же буква только в верхнем регистре: " << (char)toupper(charter) << endl;
 #endif // 
 
 #ifdef Km
-// РїРµСЂРµРІРѕРґ РёР· РјРµС‚СЂР°С… РєРј;
+// перевод из метрах км;
 	
 	double a;
-	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РІ РјРµС‚СЂР°С…: " << endl;
+	cout << "Введите количество в метрах: " << endl;
 	cin >> a;
 	cout << endl; 
-	cout << a << " РјРµС‚СЂРѕРІ Р±СѓРґРµС‚ -" << a / 1000 <<"РєРёР»РѕРјРµС‚СЂ(РѕРІ) " << endl;
+	cout << a << " метров будет -" << a / 1000 <<"километр(ов) " << endl;
 #endif
-	
 
 #ifdef Int_v_char
 int c[2][9] = {
@@ -191,9 +193,6 @@ int c[2][9] = {
 	cin.get();
 #endif // Int
 
-	
-
-
 #ifdef House
 	cout << "\t\t\t     House:\n";
 	cout << "\t\t\t     /\\ \n";
@@ -206,6 +205,76 @@ int c[2][9] = {
 	cout << "\t\t\t  |______| \n";
 #endif // House
 
+#ifdef Triengle 
+	cout << "Треугольник\n"; 
+	cout << "+\n";
+	cout << "++\n";
+	cout << "+++\n";
+	cout << "++++\n";
+	cout << "+++++\n";
+	cout << "++++++\n";
+	cout << "+++++++\n";
+	cout << endl; 
+	
+	char a = '#';
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << a; 
+		}
+		cout << endl; 
+	}
+#endif // Triengle
+
+#ifdef Labor
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	char name[20] = "\0";
+	cout << "Введите имя студента: ";
+	cin >> name;
+	//cout << endl; 
+	char famelie[20] = "\0";
+	cout << "введите фамилию студента: ";
+	cin >> famelie;
+	//cout << endl; 
+	char surname[30] ="\0";
+	cout << "введите отчество студента: "; 
+	cin >> surname; 
+	//cout << endl;
+	char number[10] = "\0";// строка для хранения данных 
+	cout << "введите номер группы студента: ";
+	cin >> number; 
+	//cout << endl;
+
+	int let = 30; // мах длинна рамки
+	int let_str1 = 25 + strlen(number); // длинна 2 рамки
+	int let_str2 = strlen(name) + strlen(famelie) + strlen(surname) +5; // длинна 3 стороны 
+
+	if (let_str1 >= let_str2 && let_str1 > 31)
+	{
+		let = let_str1; 
+	}
+	else
+		if (let_str2 > 31)
+		{
+			let = let_str2; 
+		}
+	cout << "\n\t\t\t\t"; // выравниваем по центру
+	for (int counter = 0; counter < let; counter++) { cout << "+"; }
+	cout << "\n\t\t\t\t* Лабораторная работа №23";
+	for (int counter = 0; counter < let - 25; counter++) { cout << " "; }
+	cout << "*\n\t\t\t\t* Выполнил(а) : ст. гр. " << number; 
+	for (int counter = 0; counter < let - let_str1; counter++) { cout << " "; }
+	cout << "*\n\t\t\t\t* " << famelie << " " << name << " " << surname;
+	for (int counter = 0; counter <= (let - let_str2); counter++) { cout << " "; }
+	cout << "*";
+	cout << "\n\t\t\t\t";
+	for (int counter = 0; counter < let; counter++) { cout << "+"; }
+	cout << endl; 
+#endif // Labor
 
 
 
