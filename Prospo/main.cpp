@@ -16,7 +16,10 @@ using namespace std;
 //#define Int_v_char
 //#define House
 //#define Triengle
-#define Labor
+//#define Labor
+//#define Number
+#define Nub
+
 
 void main()
 {
@@ -276,6 +279,57 @@ int c[2][9] = {
 	cout << endl; 
 #endif // Labor
 
+#ifdef Number
+	cout << "Сравнение чисел" << endl; 
+	int a;
+	cout << "Введите число №1: " << endl;
+	cin >> a; 
+	cout << endl;
+	int b;
+	cout << "Введите число №2: " << endl;
+	cin >> b;
+	cout << endl; 
+	if (a > b)
+	{
+		cout << "число №1 больше числа №2" << endl;
+	}
+	else if  (a < b)
+	{
+		cout << "число №2 больше числа №1" << endl;
+	}
+	else {
+		cout <<"/t/t/числа равны :-)" << endl;
+	}
+	cout << endl;
+	
+	
+#endif 
+
+#ifdef Nub
+	cout << "Вызведение чисел на 5" << endl; 
+
+	int a; 
+	cout << "\t введите число №1: " << endl; 
+	cin >> a; 
+	int b; 
+	cout << "\t введите число №2: " << endl;
+	cin >> b;
+	int c; 
+	cout << "\t введите число №3: " << endl;
+	cin >> c;
+
+	if (a == b || b==c || a==c )
+	{
+		cout << "есть равные числа" << endl; 
+	}
+	else
+	{
+		cout << "Число №1 = " << (a + 5) << endl;
+		cout << "Число №2 = " << (b + 5) << endl;
+		cout << "Число №3 = " << (c + 5) << endl;
+	}
+	cout << endl; 
+#endif 
 
 
 }
