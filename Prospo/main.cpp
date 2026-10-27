@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Windows.h>
-
+#include <cmath>
 
 using std::cin;
 using std::cout;
@@ -18,8 +18,9 @@ using namespace std;
 //#define Triengle
 //#define Labor
 //#define Number
-#define Nub
-
+//#define Nub
+//#define Dinamo
+#define Algebra
 
 void main()
 {
@@ -331,6 +332,61 @@ int c[2][9] = {
 	cout << endl; 
 #endif 
 
+
+#ifdef Dinamo
+	cout << "Введите количество Х: " << endl; 
+	int number = 0; 
+	cin >> number; 
+	cout << endl; 
+
+	float* arrPtrA = new float[number]; 
+	float* arrPtrB = new float[number];
+	float* arrPtrZ = new float[number]; 
+	float* arrPtrC = new float[number];
+
+	for (int i = 0; i < number; i++)
+	{
+		cout << "Введите значения A, B, Z, C, для Х: " << endl; 
+		cout << "А = "; 
+		cin >> arrPtrA[i];
+		cout << "B = ";
+		cin >> arrPtrB[i];
+		cout << "Z = ";
+		cin >> arrPtrZ[i];
+		cout << "C = ";
+		cin >> arrPtrC[i];
+	}
+	float x = 0, y = 0;
+	for (int i = 0; i < number; i++)
+	{
+		x = pow(arrPtrA[1], 3) - arrPtrB[i] + pow(arrPtrC[i], 2) / pow(arrPtrC[i], 2);
+		y += x; 
+	}
+	delete arrPtrA; 
+	delete arrPtrB;
+	delete arrPtrC;
+	delete arrPtrZ;
+	cout << "\ny = " << y << endl; 
+#endif // Dinamo
+
+
+#ifdef Algebra
+	cout << " Алгебраическая степень" << endl; 
+	cout << "введите число: " << endl;
+	int a; 
+	int sum = 0; 
+	int k;
+	cin >> a;
+	cout << "введите степень числа: " << endl;
+	cin >> k; 
+	
+	for (int i = 1; i <= a; i++)
+	{
+		sum += pow(i, (double)k);
+	}
+	cout << "Сумма равна: " << sum << endl; 
+	
+#endif // Algebra
 
 }
 
