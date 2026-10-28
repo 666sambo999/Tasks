@@ -20,8 +20,9 @@ using namespace std;
 //#define Number
 //#define Nub
 //#define Dinamo
-#define Algebra
-
+//#define Algebra
+//#define Ostatok
+#define Ugol
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -387,6 +388,63 @@ int c[2][9] = {
 	cout << "Сумма равна: " << sum << endl; 
 	
 #endif // Algebra
+
+#ifdef Ostatok
+	cout << "Большая и меньшая цифры числа." << endl; 
+	int a;
+	bool continue_prog = true;
+	cout << "Введите число не больше 99: " << endl; 
+	cin >> a; 
+	if (a>99 || a<10)
+	{
+		cout << "введите другое число меньшше 99 и больше 10, спасибо " << endl;
+	}
+	else 
+	{
+		if ((a / 10) > (a % 10))
+		{
+			cout << a / 10 << " - первая цифра больше" << endl;
+			cout << a % 10 << " - вторая цифра меньше" << endl;
+		}
+		else if ((a / 10) < (a % 10))
+		{
+			cout << a / 10 << " - первая цифра меньше" << endl;
+			cout << a % 10 << " - вторая цифра больше" << endl;
+		}
+		else {
+			cout << " цифры равны " << endl;
+		}
+	}
+	
+	
+
+#endif // Ostatok
+
+#ifdef Ugol
+	double V, T, param; 
+	const double g = 9.832, Pi = asin(1.0);
+	//const double Pi = 3.144; 
+	cout << "Введите скорость: " << endl; 
+	cin >> V; 
+	cout << "введите время: " << endl; 
+	cin >> T; 
+	if (1 < fabs(g * T / (2 * V)))
+	{
+		cout << "Неправильный" << endl; 
+	}
+	else {
+		param = asin(g * T / (2 * V));
+		//cout << "Угол = " << param * (180 / Pi) << " градусов" << endl;
+		cout << "Угол = " << param * (90 / Pi) << " градусов" << endl;
+	}
+	system("PAUSE");
+	
+	//double 
+
+
+
+	//180 / pi; 
+#endif 
 
 }
 
